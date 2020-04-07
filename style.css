@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.home {
+  background: rgb(132, 0, 246);
+  background: radial-gradient(
+    circle,
+    rgba(132, 0, 246, 1) 0%,
+    rgba(51, 8, 255, 1) 100%
+  );
+}
+
+/* P5 SKETCH */
+.p5-3d {
+  position: fixed;
+  z-index: 0;
+}
+.title {
+  font-size: 96px;
+  position: absolute;
+  z-index: 5;
+  color: white;
+  left: 48px;
+  transition: 0.3s ease-in-out;
+}
+.title:hover {
+  transform: skewY(30deg);
+}
+
+/* Photi Frames */
+.frame {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+  cursor: crosshair;
+}
+.frame:hover {
+  transform: scale(1.1);
+}
+
+/* Make sure the size of image and iframe video are the same*/
+.frame-img {
+  width: 400px;
+  height: 300px;
+  position: absolute; /* Set the position absolute */
+  z-index: 1; /* The larger number will be on top*/
+}
+
+.frame-video {
+  position: absolute; /* Set the position absolute */
+  z-index: 0;
+  width: 380px;
+  height: 280px;
+}
+
+/* Use the class name"position1", "position2" to set different position of your frames */
+.position1 {
+  top: 400px;
+  left: 100px;
+  z-index: -1;
+}
+.position2 {
+  top: 80px;
+  right: 20px;
+}
+
+.position3 {
+  top: 500px;
+  right: 200px;
+  transform: rotate(90deg);
+}
+
+.comment {
+  width: 50%;
+  height: 600px;
+  position: absolute;
+  top: 800px;
+  left: 80px;
+  color: yellow;
+}
+
+.p5-sketch {
+  margin-top: -400px;
+}
+.sketch-window {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 800px;
+  right: 20px;
+  border: none;
+}

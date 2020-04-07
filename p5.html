@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<head>
+    <title>P5 3D</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/p5.min.js"></script>
+    <script src="js/p5.js"></script>
+</head>
+
+<body>
+    <div class="p5-sketch">
+        <!-- <script>
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+                noFill();
+            }
+            function draw() {
+                // background(255);
+                let x = 20;
+                for (let i = 0; i < width; i++) {
+                    for (let j = 0; j < height - 100; j += 100) {
+                        stroke(20, x++, 120, 10);
+                        line(x++, j, pmouseX, pmouseY);
+                    }
+
+                }
+            }
+        </script> -->
+        <script>
+            var option = 1;
+
+            function setup() {
+                createCanvas(windowWidth, windowHeight);
+            }
+
+
+            function draw() {
+
+                background(255);
+                var density = map(mouseX, 0, width, 20, 50);
+                if (option == 1) {
+                    for (x = 50; x <= width - 50; x += density) {
+                        for (y = 50; y <= height - 50; y += density) {
+                            line(x - 5, y - 5, x + 5, y + 5);
+                            line(x + 5, y - 5, x - 5, y + 5);
+                            // stroke(208,x, y);
+                            rotate(radians(x));
+
+
+                        }
+                    }
+                }
+
+                else if (option == 2) {
+                    for (x = 50; x <= width - 50; x += density) {
+                        for (y = 50; y <= height - 50; y += density) {
+                            line(x, y, width / 2, height / 2);
+                            stroke(208, x, y);
+
+                        }
+                    }
+
+                }
+                else if (option == 3) {
+                    for (x = 50; x <= width - 50; x += density) {
+                        for (y = 50; y <= height - 50; y += density) {
+                            ellipse(x, y, 20, 20);
+                            fill(235, 182, 62);
+                            rotate(radians(45));
+
+                        }
+                    }
+
+                }
+
+
+            }
+
+            function mousePressed() {
+                option++;
+                if (option > 3) {
+                    option = 1;
+                }
+            }
+
+        </script>
+    </div>
+</body>
